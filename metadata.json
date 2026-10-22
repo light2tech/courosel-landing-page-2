@@ -1,0 +1,6 @@
+{
+  "name": "Foxico Travel - Countries Carousel",
+  "description": "An immersive travel destination carousel landing page inspired by Foxico, featuring panoramic country views and interactive destination cards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

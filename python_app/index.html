@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foxico - Countries Carousel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Full-screen Hero Background with scenic photography -->
+  <div class="hero-background" id="heroBg">
+    <div class="overlay gradient-radial"></div>
+    <div class="overlay gradient-linear"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Top Bar Navigation -->
+    <header class="top-nav">
+      <!-- Brand Wordmark & Highland Tea Leaf Emblem -->
+      <a href="#" class="brand-group" id="brandLogo">
+        <div class="tea-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="currentColor" fill-opacity="0.3"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
+        <span class="brand-text">Highland Tea</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#news" class="nav-link">News</a>
+        <a href="#destinations" class="nav-link active">Destinations</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link" id="contactBtn">Contact</a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="user-zone">
+        <button class="icon-btn" id="searchBtn" title="Search destinations" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn" id="savedBtn" title="Saved favorites" aria-label="Saved favorites">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+          <span class="badge" id="savedCount">2</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="main-content">
+      <!-- Left Vertical Rail (Pagination indicator) -->
+      <aside class="vertical-rail">
+        <div class="rail-counter" id="railCurrentIndex">01</div>
+        <div class="rail-line" id="railLine">
+          <!-- Dots dynamically populated or updated by script -->
+          <div class="rail-dot active" data-index="0"></div>
+          <div class="rail-dot" data-index="1"></div>
+          <div class="rail-dot" data-index="2"></div>
+          <div class="rail-dot" data-index="3"></div>
+          <div class="rail-dot" data-index="4"></div>
+        </div>
+        <div class="rail-total">05</div>
+      </aside>
+
+      <!-- Active Destination Details (Left-Center) -->
+      <section class="hero-text-area">
+        <div class="destination-tag" id="destLocation">MAMBILLA PLATEAU · 5.0 ★ (4,890 REVIEWS)</div>
+        <h1 class="hero-title" id="heroTitle">GEMBU TEA</h1>
+        <p class="hero-description" id="heroDesc">
+          Perched over 1,800 meters above sea level on the Mambilla Plateau, Highland Tea in Gembu unfurls across endless undulating emerald hills, blessed with crisp temperate breezes, volcanic highland soil, and morning mist that nurtures Nigeria’s finest organic tea leaves.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="exploreBtn">
+            <span>Explore</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-outline" id="saveHeroBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span id="saveHeroBtnText">Save</span>
+          </button>
+        </div>
+
+        <!-- Faint upcoming preview watermark -->
+        <div class="upcoming-watermark" id="watermark">Kakara</div>
+      </section>
+
+      <!-- Right Carousel Cards -->
+      <section class="carousel-container">
+        <div class="cards-track" id="cardsTrack">
+          <!-- Populated by script.js with cards: Buddha temple Thailand, Broken Beach Bali, Kerala India, Fuji Japan -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Controls & Pagination -->
+    <footer class="bottom-bar">
+      <div class="info-pill" id="footerSubtitle">
+        Destination 01 of 05 · Archipelago of 17,000 Islands
+      </div>
+
+      <!-- Navigation Controls (Prev, Auto-Play Toggle, Next) -->
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn" title="Previous destination (Left Arrow)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="arrow-btn" id="playPauseBtn" title="Pause auto-slide">
+          <svg id="playPauseIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+        </button>
+        <button class="arrow-btn" id="nextBtn" title="Next destination (Right Arrow)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Slide Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar" style="width: 20%;"></div>
+        </div>
+        <span class="progress-text" id="progressText">01 / 05</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Interactive Explorer Modal -->
+  <div class="modal-backdrop" id="exploreModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="modal-banner" id="modalBanner">
+        <div class="modal-banner-overlay"></div>
+        <div class="modal-banner-info">
+          <span class="modal-region" id="modalRegion">SOUTHEAST ASIA</span>
+          <h2 class="modal-title" id="modalTitle">INDONESIA</h2>
+          <p class="modal-sub" id="modalSub">Archipelago of 17,000 Islands</p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="quick-facts">
+          <div class="fact-box">
+            <label>Weather</label>
+            <div id="modalWeather">28°C · Tropical</div>
+          </div>
+          <div class="fact-box">
+            <label>Best Season</label>
+            <div id="modalSeason">May – September</div>
+          </div>
+          <div class="fact-box">
+            <label>Currency</label>
+            <div id="modalCurrency">Indonesian Rupiah (IDR)</div>
+          </div>
+          <div class="fact-box">
+            <label>Rating</label>
+            <div id="modalRating">5.0 ★ (4,820)</div>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h3>Curated Highlights</h3>
+          <ul class="highlights-list" id="modalHighlights"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
