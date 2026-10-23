@@ -1,0 +1,3 @@
+# Highland Tea Gembu - Python requirements
+# Standard library only (http.server, socketserver, os, sys)
+# No external pip packages needed!
